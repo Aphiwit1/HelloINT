@@ -34,6 +34,7 @@ public class Hello {
             if (rs.next()) {
                 helloMessage = rs.getString("message");
             }
+            conn.close();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Hello.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
