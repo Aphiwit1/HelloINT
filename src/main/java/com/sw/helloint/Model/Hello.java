@@ -18,27 +18,21 @@ import java.util.logging.Logger;
  * @author jiraw
  */
 public class Hello {
+
     public String bringHello() {
         String helloMessage = "";
-        Connection conn = null;
-        PreparedStatement pstm = null;
         try {
-            conn = ConnectionBuilder.getConnection();
-            if (conn != null) {
-                pstm = conn.prepareStatement("SELECT * FROM hello WHERE id = 1");
-            }
-            else {
-                System.out.println("connection is null");
-            }
+            Connection conn = ConnectionBuilder.getConnection();
+            PreparedStatement pstm = conn.prepareStatement("SELECT * FROM hello WHERE id = 1");
             ResultSet rs = pstm.executeQuery();
             if (rs.next()) {
                 helloMessage = rs.getString("message");
             }
             conn.close();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Hello.class.getName()).log(Level.SEVERE, null, ex);
+            System.err.println(ex);
         } catch (SQLException ex) {
-            Logger.getLogger(Hello.class.getName()).log(Level.SEVERE, null, ex);
+            System.err.println(ex);
         }
         return helloMessage;
     }
