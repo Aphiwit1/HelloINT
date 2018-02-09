@@ -3,7 +3,7 @@
     Created on : Feb 3, 2018, 3:04:27 PM
     Author     : jiraw
 --%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1><%= request.getAttribute("hello") %></h1>               
+        <h1><c:out value="${hello}"/></h1>
+        <form action="hello">
+            <input type="submit" value="Get hello message">
+        </form>
     </body>
 </html>
