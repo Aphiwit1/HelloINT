@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <img src="Photo.png" width="500" height="500" alt="Photo" />
         <title>JSP Page</title>
     </head>
     <body>
