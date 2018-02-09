@@ -24,16 +24,14 @@ public class ConnectionBuilder {
         Connection conn = null;
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
         try {
-            Properties prop = new Properties();
-            InputStream input = classloader.getResourceAsStream("config.properties");
-            prop.load(input);
-            String DBIP = prop.getProperty("database");
-            String USERNAME = prop.getProperty("dbuser");
-            String PASSWORD = prop.getProperty("dbpassword");
-            String PORT = prop.getProperty("dbport");
+            String dbIp = System.getenv("CAREERITY_DB_IP");
+            String dbName = System.getenv("CAREERITY_DB_NAME");
+            String dbUsername = System.getenv("CAREERITY_DB_USER");
+            String dbPassword = System.getenv("CAREERITY_DB_PASS");
+            String dbPort = System.getenv("CAREERITY_DB_PORT");
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://" + DBIP + ":" + PORT + "/HelloWorld?zeroDateTimeBehavior=convertToNull", USERNAME, PASSWORD);
-        } catch (SQLException | ClassCastException | IOException err) {
+            conn = DriverManager.getConnection("jdbc:mysql://" + dbIp + ":" + dbPort + "/" + dbName + "?zeroDateTimeBehavior=convertToNull", dbUsername, dbPassword);
+        } catch (SQLException | ClassCastException err) {
             System.err.println(err);
         }
         return conn;
