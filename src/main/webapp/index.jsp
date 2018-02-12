@@ -9,14 +9,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <img src="Photo.png" width="500" height="500" alt="Photo" />
         <title>JSP Page</title>
     </head>
     <body>
-        <img src="Photo.png" />
-        <h1><c:out value="${hello}"/></h1>
-        <form action="hello">
-            <input type="submit" value="Get hello message">
-        </form>
+        <center>
+            <img src="Photo.png" />
+            <h1><c:out value="${hello}"/></h1>
+            <form action="hello">
+                <input type="submit" value="Get hello message">
+            </form>
+        </center>
     </body>
 </html>
+ 
