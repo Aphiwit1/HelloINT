@@ -28,7 +28,6 @@ public class ConnectionBuilder {
         try {
             prop.load(input);
             String dbIp = prop.getProperty("CAREERITY_DB_IP");
-            System.out.println(dbIp);
             String dbName = prop.getProperty("CAREERITY_DB_NAME");
             String dbUsername = prop.getProperty("CAREERITY_DB_USER");
             String dbPassword = prop.getProperty("CAREERITY_DB_PASS");
