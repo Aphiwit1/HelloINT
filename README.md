@@ -9,8 +9,9 @@ https://www.youtube.com/watch?v=NT8r1Z_6IcA&feature=youtu.be
 # โครงสร้างฐานข้อมูลของโปรเจค
  - Database Name : HelloWorld
  - Table Name : hello
- - สามารถดู sql command ที่ใช้ได้ใน hello.sql
+ - สามารถดู sql command ที่ใช้ได้ในไฟล์ hello.sql
  
+# สิ่งที่ต้องทำก่อนการ deploy
 หลังจากที่ clone ตัวโปรเจคลงมาแล้ว ให้เปิด bash และเข้าไปที่ directory ของโปรเจค โดยใช้คำสั่ง
 ```bash
 cd ./src/main/resources
