@@ -29,8 +29,6 @@ public class Hello {
                 helloMessage = rs.getString("message");
             }
             conn.close();
-        } catch (ClassNotFoundException ex) {
-            System.err.println(ex);
         } catch (SQLException ex) {
             System.err.println(ex);
         }
