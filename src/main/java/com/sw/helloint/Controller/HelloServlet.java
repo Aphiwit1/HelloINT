@@ -9,6 +9,8 @@ import com.sw.helloint.Model.Hello;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -33,7 +35,7 @@ public class HelloServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String helloMessage = "";
+        List<String> helloMessage = new ArrayList<String>();
         Hello h = new Hello();
         helloMessage = h.bringHello();
         request.setAttribute("hello", helloMessage);

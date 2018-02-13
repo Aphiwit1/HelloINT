@@ -12,13 +12,16 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <center>
-            <img src="Photo.png" />
-            <h1><c:out value="${hello}"/></h1>
-            <form action="hello">
-                <input type="submit" value="Get hello message">
-            </form>
-        </center>
-    </body>
+    <center>
+        <img src="Photo.png" />
+        <form action="hello">
+            <input type="submit" value="Get hello message">
+            <h1>
+                <c:forEach items="${hello}" var="h">
+                    ${h}
+                </c:forEach>
+            </h1>
+        </form>
+    </center>
+</body>
 </html>
- 

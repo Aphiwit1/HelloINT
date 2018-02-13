@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,14 +21,14 @@ import java.util.logging.Logger;
  */
 public class Hello {
 
-    public String bringHello() {
-        String helloMessage = "";
+    public List<String> bringHello() {
+        List<String> helloMessage = new ArrayList<String>();
         try {
             Connection conn = ConnectionBuilder.getConnection();
-            PreparedStatement pstm = conn.prepareStatement("SELECT * FROM hello WHERE id = 1");
+            PreparedStatement pstm = conn.prepareStatement("SELECT * FROM hello");
             ResultSet rs = pstm.executeQuery();
-            if (rs.next()) {
-                helloMessage = rs.getString("message");
+            while (rs.next()) {
+                helloMessage.add(rs.getString("message"));
             }
             conn.close();
         } catch (SQLException ex) {
