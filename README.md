@@ -42,7 +42,7 @@ cd ../../..
 mvn install
 ```
 
-ในการ depoly นั้นสามารถแก้ context path จะไป depoly ได้โดยเข้าไปแก้ที่ไฟล์ pom.xml ในตำแหน่ง path
+ในการ depoly นั้นสามารถแก้ context path จะไป depoly ได้โดยเข้าไปแก้ที่ไฟล์ pom.xml ที่ tag path
 ```bash
 .
 .
@@ -56,17 +56,17 @@ mvn install
 ```
 
 เข้าไปที่ ${MAVEN_HOME}/conf และเปิดไฟล์ settings.xml ด้วย text editor
-และเพิ่ม field ที่ tag <server> ดังนี้
+และเพิ่ม field ที่ tag server ดังนี้
 ```bash
+ <server>
  .
  .
-<server>
-   <id>TomcatServer</id>
-   <username>admin</username>      \\username ที่ใช้ login tomcat
-   <password>password</password>   \\password ที่ใช้ login tomcat
+   <server>
+      <id>TomcatServer</id>
+      <username>admin</username>      \\username ที่ใช้ login tomcat
+      <password>password</password>   \\password ที่ใช้ login tomcat
+   </server>
 </server>
- .
- .
 ```
 
 สามารถ deploy ลง tomcat ได้โดยใช้คำสั่ง
