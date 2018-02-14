@@ -47,7 +47,7 @@ mvn install
 .
 .
 <configuration>
-  <url>http://127.0.0.1/manager/text</url>
+  <url>http://127.0.0.1:8080/manager/text</url>
   <server>TomcatServer</server>
   <path>/${project.artifactId}</path>
 </configuration>
@@ -55,16 +55,30 @@ mvn install
 .
 ```
 
+เข้าไปที่ ${MAVEN_HOME}/conf และเปิดไฟล์ settings.xml ด้วย text editor
+และเพิ่ม field ที่ tag <server> ดังนี้
+```bash
+ .
+ .
+<server>
+   <id>TomcatServer</id>
+   <username>admin</username>      \\username ที่ใช้ login tomcat
+   <password>password</password>   \\password ที่ใช้ login tomcat
+</server>
+ .
+ .
+```
+
 สามารถ deploy ลง tomcat ได้โดยใช้คำสั่ง
 ```bash
-mvn tomcat:deploy
+mvn tomcat7:deploy
 ```
 เมื่อต้องการอัพเดตโปรเจคให้ใช้คำสั่ง
 ```bash
-mvn tomcat:redeploy
+mvn tomcat7:redeploy
 ```
 เมื่อต้องการยกเลิกการ deploy ให้ใช้คำสั่ง
 ```bash
-mvn tomcat:undeploy
+mvn tomcat7:undeploy
 ```
 
